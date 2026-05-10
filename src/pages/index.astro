@@ -21,7 +21,12 @@ const success = Astro.url.searchParams.get('success') === '1';
     <section
       class="home-hero relative flex min-h-[100svh] min-h-[820px] items-center justify-center overflow-hidden px-margin-mobile pb-24 pt-28 md:px-margin-desktop md:pb-32"
     >
-      <div class="home-hero-mesh pointer-events-none absolute inset-0 z-[1] opacity-90 mix-blend-screen"></div>
+      <div class="home-hero-mesh home-hero-mesh-anim pointer-events-none absolute inset-0 z-[1] opacity-90 mix-blend-screen"></div>
+      <div
+        class="home-hero-aurora pointer-events-none absolute inset-0 z-[1] opacity-40 mix-blend-soft-light"
+        aria-hidden="true"
+      >
+      </div>
       <div class="home-noise pointer-events-none absolute inset-0 z-[2] opacity-[0.14]"></div>
       <div class="absolute inset-0 z-0">
         <img
@@ -59,12 +64,12 @@ const success = Astro.url.searchParams.get('success') === '1';
           <h1
             class="font-['Syne',system-ui,sans-serif] mb-6 text-5xl font-extrabold leading-[0.95] tracking-tight text-white text-balance drop-shadow-[0_12px_40px_rgba(0,0,0,0.35)] motion-reveal motion-delay-2 sm:text-6xl md:text-7xl lg:text-8xl"
           >
-            Discover the soul of <span class="text-[#ffe7c2]">Kerala</span>, vividly.
+            Discover the soul of <span class="home-hero-accent text-[#ffe7c2]">Kerala</span>, vividly.
           </h1>
           <p
             class="font-['Syne',system-ui,sans-serif] mb-8 text-xl font-semibold italic leading-snug tracking-wide text-[#c9fff0] motion-reveal motion-delay-3 sm:text-2xl md:text-[1.65rem]"
           >
-            Every Journey, <span class="not-italic text-[#ffe7c2]">Perfected</span>
+            Every Journey, <span class="home-hero-accent not-italic text-[#ffe7c2]">Perfected</span>
           </p>
           <p
             class="font-['DM_Sans',system-ui,sans-serif] mb-10 max-w-xl text-lg leading-relaxed text-white/88 text-pretty motion-reveal motion-delay-4 md:text-xl"
@@ -73,23 +78,23 @@ const success = Astro.url.searchParams.get('success') === '1';
             and our story.
           </p>
           <div
-            class="flex flex-col gap-4 motion-reveal motion-delay-5 sm:flex-row sm:flex-wrap sm:items-center"
+            class="home-hero-cta-row flex flex-col gap-4 motion-reveal motion-delay-5 sm:flex-row sm:flex-wrap sm:items-center"
           >
             <a
               href="/explore"
-              class="font-['DM_Sans',system-ui,sans-serif] inline-flex items-center justify-center rounded-full bg-[#ffe7c2] px-8 py-4 text-sm font-semibold uppercase tracking-wide text-[#0b1f1a] shadow-[0_18px_40px_rgba(0,0,0,0.25)] transition duration-300 hover:-translate-y-0.5 hover:bg-white"
+              class="home-hero-cta font-['DM_Sans',system-ui,sans-serif] inline-flex items-center justify-center rounded-full bg-[#ffe7c2] px-8 py-4 text-sm font-semibold uppercase tracking-wide text-[#0b1f1a] shadow-[0_18px_40px_rgba(0,0,0,0.25)]"
             >
               Explore packages
             </a>
             <a
               href="/#rentals"
-              class="font-['DM_Sans',system-ui,sans-serif] inline-flex items-center justify-center rounded-full border border-white/35 bg-white/10 px-8 py-4 text-sm font-semibold uppercase tracking-wide text-white backdrop-blur-md transition duration-300 hover:-translate-y-0.5 hover:bg-white/20"
+              class="home-hero-cta font-['DM_Sans',system-ui,sans-serif] inline-flex items-center justify-center rounded-full border border-white/35 bg-white/10 px-8 py-4 text-sm font-semibold uppercase tracking-wide text-white backdrop-blur-md"
             >
               View fleet
             </a>
             <a
               href="/#planner"
-              class="font-['DM_Sans',system-ui,sans-serif] inline-flex items-center justify-center rounded-full border border-transparent bg-[#5ce1c6] px-8 py-4 text-sm font-semibold uppercase tracking-wide text-[#04221c] shadow-[0_18px_40px_rgba(92,225,198,0.35)] transition duration-300 hover:-translate-y-0.5 hover:brightness-110"
+              class="home-hero-cta home-hero-cta-mint font-['DM_Sans',system-ui,sans-serif] inline-flex items-center justify-center rounded-full border border-transparent bg-[#5ce1c6] px-8 py-4 text-sm font-semibold uppercase tracking-wide text-[#04221c] shadow-[0_18px_40px_rgba(92,225,198,0.35)]"
             >
               Design your journey
             </a>
@@ -107,15 +112,15 @@ const success = Astro.url.searchParams.get('success') === '1';
               aria-label="Jump to page sections"
             >
               <a
-                class="home-jump-pill inline-flex h-9 shrink-0 items-center justify-center rounded-full border border-white/30 bg-black/25 px-5 text-sm font-semibold text-white/95 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-sm transition duration-200 hover:border-[#5ce1c6]/90 hover:bg-black/35 hover:text-white"
+                class="home-jump-pill home-jump-pill-a inline-flex h-9 shrink-0 items-center justify-center rounded-full border border-white/30 bg-black/25 px-5 text-sm font-semibold text-white/95 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-sm transition duration-200 hover:border-[#5ce1c6]/90 hover:bg-black/35 hover:text-white"
                 href="/#rentals">Rentals</a
               >
               <a
-                class="home-jump-pill inline-flex h-9 shrink-0 items-center justify-center rounded-full border border-white/30 bg-black/25 px-5 text-sm font-semibold text-white/95 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-sm transition duration-200 hover:border-[#5ce1c6]/90 hover:bg-black/35 hover:text-white"
+                class="home-jump-pill home-jump-pill-b inline-flex h-9 shrink-0 items-center justify-center rounded-full border border-white/30 bg-black/25 px-5 text-sm font-semibold text-white/95 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-sm transition duration-200 hover:border-[#5ce1c6]/90 hover:bg-black/35 hover:text-white"
                 href="/#planner">Planner</a
               >
               <a
-                class="home-jump-pill inline-flex h-9 shrink-0 items-center justify-center rounded-full border border-white/30 bg-black/25 px-5 text-sm font-semibold text-white/95 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-sm transition duration-200 hover:border-[#5ce1c6]/90 hover:bg-black/35 hover:text-white"
+                class="home-jump-pill home-jump-pill-c inline-flex h-9 shrink-0 items-center justify-center rounded-full border border-white/30 bg-black/25 px-5 text-sm font-semibold text-white/95 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-sm transition duration-200 hover:border-[#5ce1c6]/90 hover:bg-black/35 hover:text-white"
                 href="/#about">About</a
               >
             </nav>
@@ -126,7 +131,7 @@ const success = Astro.url.searchParams.get('success') === '1';
           class="motion-reveal motion-delay-3 grid w-full max-w-md gap-4 self-stretch lg:max-w-sm lg:justify-items-stretch"
         >
           <div
-            class="home-glass group rounded-3xl border border-white/20 bg-white/10 p-6 shadow-[0_24px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl transition duration-500 hover:-translate-y-1 hover:border-[#5ce1c6]/50"
+            class="home-glass home-glass-float group rounded-3xl border border-white/20 bg-white/10 p-6 shadow-[0_24px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl transition duration-500 hover:-translate-y-1 hover:border-[#5ce1c6]/50"
           >
             <p class="font-['Syne',system-ui,sans-serif] text-sm font-semibold uppercase tracking-widest text-[#c9fff0]">
               Live routes
@@ -143,7 +148,7 @@ const success = Astro.url.searchParams.get('success') === '1';
             </div>
           </div>
           <div
-            class="home-glass rounded-3xl border border-white/15 bg-gradient-to-br from-[#0f3d32]/80 to-[#1a0b06]/80 p-6 shadow-[0_24px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl transition duration-500 hover:-translate-y-1"
+            class="home-glass home-glass-float home-glass-float-delay rounded-3xl border border-white/15 bg-gradient-to-br from-[#0f3d32]/80 to-[#1a0b06]/80 p-6 shadow-[0_24px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl transition duration-500 hover:-translate-y-1"
           >
             <p class="font-['Syne',system-ui,sans-serif] text-sm font-semibold uppercase tracking-widest text-[#ffd8bc]">
               Fleet pulse
@@ -154,12 +159,26 @@ const success = Astro.url.searchParams.get('success') === '1';
           </div>
         </div>
       </div>
+
+      <a
+        class="home-scroll-hint font-['DM_Sans',system-ui,sans-serif] absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-1 text-xs font-semibold uppercase tracking-[0.2em] text-white/55 transition hover:text-[#5ce1c6]"
+        href="/#rentals"
+        aria-label="Scroll to fleet section"
+      >
+        <span>Scroll</span>
+        <span class="material-symbols-outlined home-scroll-hint-icon text-2xl text-[#5ce1c6]/90">expand_more</span>
+      </a>
     </section>
 
     <section
       id="rentals"
-      class="relative scroll-mt-24 border-t border-[#0b3d2e]/10 bg-[#f6fff9] px-margin-mobile py-24 md:scroll-mt-28 md:px-margin-desktop md:py-32"
+      class="home-section-rentals relative scroll-mt-24 border-t border-[#0b3d2e]/10 bg-[#f6fff9] px-margin-mobile py-24 md:scroll-mt-28 md:px-margin-desktop md:py-32"
     >
+      <div
+        class="home-section-blob pointer-events-none absolute -right-20 top-24 h-72 w-72 rounded-full bg-[#5ce1c6]/20 blur-3xl"
+        aria-hidden="true"
+      >
+      </div>
       <div class="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#dff8ef]/80 to-transparent">
       </div>
       <div class="relative mx-auto max-w-[min(96rem,calc(100%-2rem))]">
@@ -417,11 +436,13 @@ const success = Astro.url.searchParams.get('success') === '1';
       class="relative scroll-mt-24 overflow-hidden bg-[#fff7ef] px-margin-mobile py-24 md:scroll-mt-28 md:px-margin-desktop md:py-32"
     >
       <div
-        class="pointer-events-none absolute -right-24 top-20 h-96 w-96 rounded-full bg-[#ff8f6b]/25 blur-3xl"
+        class="home-float-blob pointer-events-none absolute -right-24 top-20 h-96 w-96 rounded-full bg-[#ff8f6b]/25 blur-3xl"
+        aria-hidden="true"
       >
       </div>
       <div
-        class="pointer-events-none absolute -left-32 bottom-0 h-[28rem] w-[28rem] rounded-full bg-[#5ce1c6]/20 blur-3xl"
+        class="home-float-blob home-float-blob-delay pointer-events-none absolute -left-32 bottom-0 h-[28rem] w-[28rem] rounded-full bg-[#5ce1c6]/20 blur-3xl"
+        aria-hidden="true"
       >
       </div>
 
@@ -467,7 +488,7 @@ const success = Astro.url.searchParams.get('success') === '1';
           </div>
           <div class="motion-reveal lg:col-span-7">
             <div
-              class="rounded-3xl border border-[#fed7aa]/80 bg-white/90 p-8 shadow-[0_28px_70px_rgba(67,20,7,0.12)] backdrop-blur-md md:p-12"
+              class="home-planner-form rounded-3xl border border-[#fed7aa]/80 bg-white/90 p-8 shadow-[0_28px_70px_rgba(67,20,7,0.12)] backdrop-blur-md md:p-12"
             >
               <InquiryForm successRedirect="/?success=1#planner" />
             </div>
@@ -744,6 +765,197 @@ const success = Astro.url.searchParams.get('success') === '1';
         radial-gradient(ellipse 80% 60% at 85% 75%, rgba(92, 225, 198, 0.35), transparent 50%),
         radial-gradient(circle at 50% 100%, rgba(255, 231, 194, 0.2), transparent 55%);
     }
+    .home-hero-mesh-anim {
+      animation: home-mesh-breathe 16s ease-in-out infinite alternate;
+    }
+    @keyframes home-mesh-breathe {
+      0% {
+        opacity: 0.82;
+        transform: scale(1);
+      }
+      100% {
+        opacity: 0.98;
+        transform: scale(1.035);
+      }
+    }
+    .home-hero-aurora {
+      background: linear-gradient(
+        118deg,
+        transparent 0%,
+        rgba(255, 143, 107, 0.14) 38%,
+        rgba(92, 225, 198, 0.12) 52%,
+        transparent 78%
+      );
+      background-size: 220% 220%;
+      animation: home-aurora-sweep 14s ease-in-out infinite alternate;
+    }
+    @keyframes home-aurora-sweep {
+      0% {
+        background-position: 10% 40%;
+      }
+      100% {
+        background-position: 90% 60%;
+      }
+    }
+    .home-hero-accent {
+      animation: home-accent-glow 5.5s ease-in-out infinite;
+    }
+    @keyframes home-accent-glow {
+      0%,
+      100% {
+        text-shadow:
+          0 0 28px rgba(255, 231, 194, 0.4),
+          0 0 2px rgba(255, 255, 255, 0.25);
+      }
+      50% {
+        text-shadow:
+          0 0 40px rgba(92, 225, 198, 0.45),
+          0 0 24px rgba(255, 143, 107, 0.25);
+      }
+    }
+    .home-hero-cta {
+      transition:
+        transform 0.45s cubic-bezier(0.34, 1.45, 0.64, 1),
+        box-shadow 0.45s ease,
+        background-color 0.35s ease,
+        border-color 0.35s ease,
+        filter 0.35s ease;
+    }
+    .home-hero-cta:hover {
+      transform: translateY(-4px) scale(1.02);
+    }
+    .home-hero-cta:active {
+      transform: translateY(-1px) scale(0.99);
+      transition-duration: 0.12s;
+    }
+    .home-hero-cta-mint:hover {
+      box-shadow: 0 22px 52px rgba(92, 225, 198, 0.48);
+      filter: brightness(1.06);
+    }
+    .home-hero-cta-row.is-visible .home-hero-cta {
+      animation: home-cta-pop 0.75s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+    }
+    .home-hero-cta-row.is-visible .home-hero-cta:nth-child(1) {
+      animation-delay: 0.12s;
+    }
+    .home-hero-cta-row.is-visible .home-hero-cta:nth-child(2) {
+      animation-delay: 0.24s;
+    }
+    .home-hero-cta-row.is-visible .home-hero-cta:nth-child(3) {
+      animation-delay: 0.36s;
+    }
+    @keyframes home-cta-pop {
+      0% {
+        opacity: 0;
+        transform: translateY(18px) scale(0.92);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+    .home-glass-float {
+      animation: home-glass-glow 8s ease-in-out infinite;
+    }
+    .home-glass-float-delay {
+      animation-delay: -4s;
+    }
+    @keyframes home-glass-glow {
+      0%,
+      100% {
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+      }
+      50% {
+        box-shadow:
+          0 28px 72px rgba(0, 0, 0, 0.38),
+          0 0 0 1px rgba(92, 225, 198, 0.12);
+      }
+    }
+    .home-jump-pill {
+      animation: home-pill-shimmer 5s ease-in-out infinite;
+    }
+    .home-jump-pill-b {
+      animation-delay: 0.35s;
+    }
+    .home-jump-pill-c {
+      animation-delay: 0.7s;
+    }
+    @keyframes home-pill-shimmer {
+      0%,
+      100% {
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+      }
+      50% {
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.18),
+          0 0 20px rgba(92, 225, 198, 0.12);
+      }
+    }
+    .home-scroll-hint-icon {
+      animation: home-scroll-nudge 2.4s ease-in-out infinite;
+    }
+    @keyframes home-scroll-nudge {
+      0%,
+      100% {
+        transform: translateY(0);
+        opacity: 0.75;
+      }
+      50% {
+        transform: translateY(10px);
+        opacity: 1;
+      }
+    }
+    .home-section-blob {
+      animation: home-blob-drift 20s ease-in-out infinite alternate;
+    }
+    @keyframes home-blob-drift {
+      0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.85;
+      }
+      100% {
+        transform: translate(-24px, 16px) scale(1.08);
+        opacity: 1;
+      }
+    }
+    .home-float-blob {
+      animation: home-blob-drift 24s ease-in-out infinite alternate;
+    }
+    .home-float-blob-delay {
+      animation-delay: -8s;
+      animation-duration: 28s;
+    }
+    .home-planner-form {
+      animation: home-form-border 10s ease-in-out infinite;
+    }
+    @keyframes home-form-border {
+      0%,
+      100% {
+        border-color: rgba(254, 215, 170, 0.8);
+        box-shadow: 0 28px 70px rgba(67, 20, 7, 0.12);
+      }
+      50% {
+        border-color: rgba(15, 118, 110, 0.35);
+        box-shadow:
+          0 32px 78px rgba(67, 20, 7, 0.14),
+          0 0 0 1px rgba(92, 225, 198, 0.08);
+      }
+    }
+    article.home-card {
+      transition:
+        transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.55s ease;
+    }
+    article.home-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 32px 68px rgba(11, 61, 46, 0.18);
+    }
+    .home-card .material-symbols-outlined {
+      transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .home-card:hover .material-symbols-outlined {
+      transform: scale(1.08) rotate(-4deg);
+    }
     .home-noise {
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
     }
@@ -825,7 +1037,23 @@ const success = Astro.url.searchParams.get('success') === '1';
       .home-orb,
       .home-hero-img,
       .home-blink,
-      .home-cta-pulse {
+      .home-cta-pulse,
+      .home-hero-mesh-anim,
+      .home-hero-aurora,
+      .home-hero-accent,
+      .home-glass-float,
+      .home-glass-float-delay,
+      .home-jump-pill,
+      .home-jump-pill-b,
+      .home-jump-pill-c,
+      .home-scroll-hint-icon,
+      .home-section-blob,
+      .home-float-blob,
+      .home-float-blob-delay,
+      .home-planner-form {
+        animation: none !important;
+      }
+      .home-hero-cta-row.is-visible .home-hero-cta {
         animation: none !important;
       }
       .motion-reveal {
@@ -833,6 +1061,10 @@ const success = Astro.url.searchParams.get('success') === '1';
         transform: none !important;
         filter: none !important;
         transition: none !important;
+      }
+      .home-hero-cta:hover,
+      article.home-card:hover {
+        transform: none !important;
       }
     }
   </style>
