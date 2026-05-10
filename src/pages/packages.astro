@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../site.config';
+---
+
+<BaseLayout
+  title={`Packages · ${site.name}`}
+  description="Curated Kerala packages combining stays, transfers, and immersive experiences—crafted for discerning travelers."
+>
+  <main class="mx-auto max-w-container-max px-margin-mobile py-section-padding md:px-margin-desktop">
+    <h1 class="font-headline-lg text-headline-lg text-primary mb-6">Packages</h1>
+    <p class="font-body-md text-body-md text-on-surface-variant mb-10 max-w-2xl">
+      Detailed itineraries and seasonal offers will live here. Until then, explore destinations on the{' '}
+      <a class="text-secondary underline hover:opacity-80" href="/explore">Explore</a> page and tell us
+      how you’d like to travel via the{' '}
+      <a class="text-secondary underline hover:opacity-80" href="/planner">Planner</a>.
+    </p>
+    <a
+      class="bg-primary text-on-primary inline-flex rounded-full px-8 py-3 font-label-md text-label-md transition-opacity hover:opacity-90"
+      href="/planner"
+    >
+      Start planning
+    </a>
+  </main>
+</BaseLayout>

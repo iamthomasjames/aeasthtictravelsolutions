@@ -1,0 +1,856 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import InquiryForm from '../components/InquiryForm.astro';
+import { site } from '../site.config';
+
+const success = Astro.url.searchParams.get('success') === '1';
+---
+
+<BaseLayout
+  title={`${site.name} · Discover the Soul of Kerala`}
+  description={site.description}
+  ogImage="/images/home/hero.jpg"
+>
+  <link
+    slot="head"
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Syne:wght@400;500;600;700;800&display=swap"
+  />
+
+  <main class="home-root bg-background text-on-background overflow-x-hidden">
+    <section
+      class="home-hero relative flex min-h-[100svh] min-h-[820px] items-center justify-center overflow-hidden px-margin-mobile pb-24 pt-28 md:px-margin-desktop md:pb-32"
+    >
+      <div class="home-hero-mesh pointer-events-none absolute inset-0 z-[1] opacity-90 mix-blend-screen"></div>
+      <div class="home-noise pointer-events-none absolute inset-0 z-[2] opacity-[0.14]"></div>
+      <div class="absolute inset-0 z-0">
+        <img
+          alt="Kerala Backwaters"
+          class="home-hero-img h-full w-full object-cover object-center"
+          src="/images/home/hero.jpg"
+          loading="eager"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-[#063028]/88 via-[#0a4d3c]/55 to-[#ff7a45]/35"
+        >
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#021910] via-transparent to-[#fff8ef]/10"></div>
+      </div>
+
+      <div
+        class="home-orb home-orb-a pointer-events-none absolute -left-24 top-1/4 z-[3] h-72 w-72 rounded-full bg-[#ff8f6b]/35 blur-3xl"
+      >
+      </div>
+      <div
+        class="home-orb home-orb-b pointer-events-none absolute -right-16 bottom-16 z-[3] h-80 w-80 rounded-full bg-[#5ce1c6]/30 blur-3xl"
+      >
+      </div>
+
+      <div
+        class="relative z-10 mx-auto flex w-full max-w-[min(96rem,calc(100%-2rem))] flex-col gap-14 lg:flex-row lg:items-end lg:justify-between"
+      >
+        <div class="max-w-3xl motion-reveal">
+          <span
+            class="font-['Syne',system-ui,sans-serif] mb-6 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-5 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-[#fff3df] backdrop-blur-md motion-reveal motion-delay-1"
+          >
+            <span class="home-blink h-2 w-2 rounded-full bg-[#5ce1c6]"></span>
+            Experience tranquility
+          </span>
+          <h1
+            class="font-['Syne',system-ui,sans-serif] mb-6 text-5xl font-extrabold leading-[0.95] tracking-tight text-white text-balance drop-shadow-[0_12px_40px_rgba(0,0,0,0.35)] motion-reveal motion-delay-2 sm:text-6xl md:text-7xl lg:text-8xl"
+          >
+            Discover the soul of <span class="text-[#ffe7c2]">Kerala</span>, vividly.
+          </h1>
+          <p
+            class="font-['Syne',system-ui,sans-serif] mb-8 text-xl font-semibold italic leading-snug tracking-wide text-[#c9fff0] motion-reveal motion-delay-3 sm:text-2xl md:text-[1.65rem]"
+          >
+            Every Journey, <span class="not-italic text-[#ffe7c2]">Perfected</span>
+          </p>
+          <p
+            class="font-['DM_Sans',system-ui,sans-serif] mb-10 max-w-xl text-lg leading-relaxed text-white/88 text-pretty motion-reveal motion-delay-4 md:text-xl"
+          >
+            Emerald backwaters, misted hills, and curated transport—one flowing page for fleet, planning,
+            and our story.
+          </p>
+          <div
+            class="flex flex-col gap-4 motion-reveal motion-delay-5 sm:flex-row sm:flex-wrap sm:items-center"
+          >
+            <a
+              href="/explore"
+              class="font-['DM_Sans',system-ui,sans-serif] inline-flex items-center justify-center rounded-full bg-[#ffe7c2] px-8 py-4 text-sm font-semibold uppercase tracking-wide text-[#0b1f1a] shadow-[0_18px_40px_rgba(0,0,0,0.25)] transition duration-300 hover:-translate-y-0.5 hover:bg-white"
+            >
+              Explore packages
+            </a>
+            <a
+              href="/#rentals"
+              class="font-['DM_Sans',system-ui,sans-serif] inline-flex items-center justify-center rounded-full border border-white/35 bg-white/10 px-8 py-4 text-sm font-semibold uppercase tracking-wide text-white backdrop-blur-md transition duration-300 hover:-translate-y-0.5 hover:bg-white/20"
+            >
+              View fleet
+            </a>
+            <a
+              href="/#planner"
+              class="font-['DM_Sans',system-ui,sans-serif] inline-flex items-center justify-center rounded-full border border-transparent bg-[#5ce1c6] px-8 py-4 text-sm font-semibold uppercase tracking-wide text-[#04221c] shadow-[0_18px_40px_rgba(92,225,198,0.35)] transition duration-300 hover:-translate-y-0.5 hover:brightness-110"
+            >
+              Design your journey
+            </a>
+          </div>
+
+          <div
+            class="font-['DM_Sans',system-ui,sans-serif] mt-12 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm motion-reveal motion-delay-6"
+          >
+            <span
+              class="inline-flex h-9 shrink-0 items-center text-sm font-medium leading-none text-white/50"
+              >Jump to</span
+            >
+            <nav
+              class="flex flex-wrap items-center gap-2 sm:gap-3"
+              aria-label="Jump to page sections"
+            >
+              <a
+                class="home-jump-pill inline-flex h-9 shrink-0 items-center justify-center rounded-full border border-white/30 bg-black/25 px-5 text-sm font-semibold text-white/95 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-sm transition duration-200 hover:border-[#5ce1c6]/90 hover:bg-black/35 hover:text-white"
+                href="/#rentals">Rentals</a
+              >
+              <a
+                class="home-jump-pill inline-flex h-9 shrink-0 items-center justify-center rounded-full border border-white/30 bg-black/25 px-5 text-sm font-semibold text-white/95 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-sm transition duration-200 hover:border-[#5ce1c6]/90 hover:bg-black/35 hover:text-white"
+                href="/#planner">Planner</a
+              >
+              <a
+                class="home-jump-pill inline-flex h-9 shrink-0 items-center justify-center rounded-full border border-white/30 bg-black/25 px-5 text-sm font-semibold text-white/95 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-sm transition duration-200 hover:border-[#5ce1c6]/90 hover:bg-black/35 hover:text-white"
+                href="/#about">About</a
+              >
+            </nav>
+          </div>
+        </div>
+
+        <div
+          class="motion-reveal motion-delay-3 grid w-full max-w-md gap-4 self-stretch lg:max-w-sm lg:justify-items-stretch"
+        >
+          <div
+            class="home-glass group rounded-3xl border border-white/20 bg-white/10 p-6 shadow-[0_24px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl transition duration-500 hover:-translate-y-1 hover:border-[#5ce1c6]/50"
+          >
+            <p class="font-['Syne',system-ui,sans-serif] text-sm font-semibold uppercase tracking-widest text-[#c9fff0]">
+              Live routes
+            </p>
+            <p class="font-['DM_Sans',system-ui,sans-serif] mt-3 text-2xl font-semibold text-white">
+              Alleppey → Munnar
+            </p>
+            <p class="font-['DM_Sans',system-ui,sans-serif] mt-2 text-sm text-white/75">
+              Chauffeured legs, backwater hand-offs, and hill-station reveals—timed like a magazine spread.
+            </p>
+            <div class="mt-5 flex items-center justify-between text-xs font-semibold uppercase tracking-wide text-white/55">
+              <span>Curated</span>
+              <span class="text-[#5ce1c6]">Now booking</span>
+            </div>
+          </div>
+          <div
+            class="home-glass rounded-3xl border border-white/15 bg-gradient-to-br from-[#0f3d32]/80 to-[#1a0b06]/80 p-6 shadow-[0_24px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl transition duration-500 hover:-translate-y-1"
+          >
+            <p class="font-['Syne',system-ui,sans-serif] text-sm font-semibold uppercase tracking-widest text-[#ffd8bc]">
+              Fleet pulse
+            </p>
+            <p class="font-['DM_Sans',system-ui,sans-serif] mt-3 text-lg text-white/90">
+              SUVs for ghats · sedans for coast · transparent tariffs
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="rentals"
+      class="relative scroll-mt-24 border-t border-[#0b3d2e]/10 bg-[#f6fff9] px-margin-mobile py-24 md:scroll-mt-28 md:px-margin-desktop md:py-32"
+    >
+      <div class="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#dff8ef]/80 to-transparent">
+      </div>
+      <div class="relative mx-auto max-w-[min(96rem,calc(100%-2rem))]">
+        <div class="motion-reveal mb-16 max-w-3xl md:mb-20">
+          <p class="font-['Syne',system-ui,sans-serif] text-sm font-semibold uppercase tracking-[0.2em] text-[#0f766e]">
+            Rentals
+          </p>
+          <h2
+            class="font-['Syne',system-ui,sans-serif] mt-4 text-4xl font-bold tracking-tight text-[#04221c] md:text-5xl lg:text-6xl"
+          >
+            A fleet sculpted for <span class="text-[#e85d3a]">Kerala’s terrain</span>.
+          </h2>
+          <p class="font-['DM_Sans',system-ui,sans-serif] mt-6 max-w-2xl text-lg text-[#1f3d34]/85">
+            Explore with comfort and elegance—curated vehicles maintained for pristine journeys through the
+            tropics.
+          </p>
+        </div>
+
+        <div class="mb-20 motion-reveal">
+          <h3
+            class="font-['Syne',system-ui,sans-serif] mb-10 inline-block border-b-2 border-[#0f766e]/30 pb-3 text-2xl font-semibold text-[#063028]"
+          >
+            Luxury sedans
+          </h3>
+          <div class="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-8">
+            <article
+              class="home-card group relative flex flex-col overflow-hidden rounded-3xl bg-white shadow-[0_24px_60px_rgba(11,61,46,0.12)] lg:col-span-8 lg:min-h-[380px] lg:flex-row"
+            >
+              <div class="relative min-h-[280px] w-full lg:w-1/2">
+                <img
+                  alt="Luxury Sedan"
+                  class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                  src="/images/rentals/executive-sedan.jpg"
+                  loading="lazy"
+                />
+                <div
+                  class="pointer-events-none absolute inset-0 bg-gradient-to-tr from-[#04221c]/55 via-transparent to-transparent"
+                >
+                </div>
+              </div>
+              <div class="flex w-full flex-col justify-between p-8 lg:w-1/2 lg:p-10">
+                <div>
+                  <div class="mb-4 flex flex-wrap items-start justify-between gap-3">
+                    <h4 class="font-['Syne',system-ui,sans-serif] text-2xl font-semibold text-[#04221c]">
+                      Executive sedan
+                    </h4>
+                    <span
+                      class="rounded-full bg-[#ffe7c2] px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#7a3b12]"
+                      >Popular</span
+                    >
+                  </div>
+                  <p class="font-['DM_Sans',system-ui,sans-serif] text-[#1f3d34]/85">
+                    Ideal for couples or solo travelers seeking a smooth, elegant ride through scenic coastal
+                    roads.
+                  </p>
+                  <ul class="mt-6 space-y-3 font-['DM_Sans',system-ui,sans-serif] text-[#1f3d34]">
+                    <li class="flex items-center gap-3">
+                      <span class="material-symbols-outlined text-[#0f766e]">group</span> Up to 3 passengers
+                    </li>
+                    <li class="flex items-center gap-3">
+                      <span class="material-symbols-outlined text-[#0f766e]">ac_unit</span> Climate control
+                    </li>
+                    <li class="flex items-center gap-3">
+                      <span class="material-symbols-outlined text-[#0f766e]">luggage</span> 2 large suitcases
+                    </li>
+                  </ul>
+                </div>
+                <div class="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-[#0b3d2e]/10 pt-6">
+                  <div>
+                    <span class="font-['DM_Sans',system-ui,sans-serif] text-xs font-semibold uppercase tracking-wide text-[#1f3d34]/60"
+                      >From</span
+                    >
+                    <p class="font-['Syne',system-ui,sans-serif] text-3xl font-bold text-[#04221c]">
+                      ₹3,500 <span class="text-lg font-medium text-[#1f3d34]/60">/ day</span>
+                    </p>
+                  </div>
+                  <a
+                    href="/#planner"
+                    class="font-['DM_Sans',system-ui,sans-serif] inline-flex rounded-2xl bg-[#04221c] px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#0f3d2e]"
+                    >Book now</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="home-card group flex flex-col overflow-hidden rounded-3xl bg-white shadow-[0_24px_60px_rgba(11,61,46,0.12)] lg:col-span-4"
+            >
+              <div class="relative h-52 w-full overflow-hidden">
+                <img
+                  alt="Premium Sedan"
+                  class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                  src="/images/rentals/premium-sedan.jpg"
+                  loading="lazy"
+                />
+              </div>
+              <div class="flex flex-grow flex-col p-6">
+                <h4 class="font-['Syne',system-ui,sans-serif] text-xl font-semibold text-[#04221c]">
+                  Premium sedan
+                </h4>
+                <p class="font-['DM_Sans',system-ui,sans-serif] mt-2 text-sm text-[#1f3d34]/85">
+                  Enhanced comfort for longer hill-station transfers.
+                </p>
+                <div class="mt-4 flex items-center gap-4 text-sm text-[#1f3d34]/75">
+                  <span class="flex items-center gap-1"
+                    ><span class="material-symbols-outlined text-base">group</span> 4</span
+                  >
+                  <span class="flex items-center gap-1"
+                    ><span class="material-symbols-outlined text-base">luggage</span> 3</span
+                  >
+                </div>
+                <div class="mt-auto flex items-center justify-between border-t border-[#0b3d2e]/10 pt-4">
+                  <span class="font-['Syne',system-ui,sans-serif] text-xl font-bold text-[#04221c]"
+                    >₹4,500<span class="text-sm font-medium text-[#1f3d34]/60">/d</span></span
+                  >
+                  <a
+                    href="/#planner"
+                    class="rounded-xl border-2 border-[#0f766e] px-4 py-2 text-sm font-semibold text-[#0f766e] transition hover:bg-[#0f766e] hover:text-white"
+                    >Book</a
+                  >
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="motion-reveal">
+          <h3
+            class="font-['Syne',system-ui,sans-serif] mb-10 inline-block border-b-2 border-[#e85d3a]/35 pb-3 text-2xl font-semibold text-[#063028]"
+          >
+            Premium SUVs
+          </h3>
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
+            <article
+              class="home-card group flex flex-col overflow-hidden rounded-3xl bg-white shadow-[0_24px_60px_rgba(11,61,46,0.12)]"
+            >
+              <div class="relative h-56 w-full overflow-hidden">
+                <img
+                  alt="Luxury SUV"
+                  class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                  src="/images/rentals/luxury-suv.jpg"
+                  loading="lazy"
+                />
+              </div>
+              <div class="flex flex-grow flex-col p-6">
+                <h4 class="font-['Syne',system-ui,sans-serif] text-lg font-semibold text-[#04221c]">
+                  Luxury 4×4 SUV
+                </h4>
+                <p class="font-['DM_Sans',system-ui,sans-serif] mt-2 text-sm text-[#1f3d34]/85">
+                  Commanding views on Munnar’s winding roads.
+                </p>
+                <div
+                  class="mt-4 flex flex-wrap items-center gap-3 border-y border-[#0b3d2e]/10 py-3 text-sm text-[#1f3d34]/80"
+                >
+                  <span class="flex items-center gap-1"
+                    ><span class="material-symbols-outlined text-base">group</span> 6</span
+                  >
+                  <span class="flex items-center gap-1"
+                    ><span class="material-symbols-outlined text-base">luggage</span> 4</span
+                  >
+                  <span class="flex items-center gap-1"
+                    ><span class="material-symbols-outlined text-base">settings</span> Auto</span
+                  >
+                </div>
+                <div class="mt-auto flex items-center justify-between pt-4">
+                  <span class="font-['Syne',system-ui,sans-serif] text-xl font-bold text-[#04221c]"
+                    >₹6,000<span class="text-sm font-medium text-[#1f3d34]/60">/day</span></span
+                  >
+                  <a
+                    href="/#planner"
+                    class="rounded-xl bg-[#04221c] px-5 py-2.5 text-sm font-semibold text-white transition hover:-translate-y-0.5"
+                    >Book</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="home-card group flex flex-col overflow-hidden rounded-3xl bg-white shadow-[0_24px_60px_rgba(11,61,46,0.12)]"
+            >
+              <div class="relative h-56 w-full overflow-hidden">
+                <img
+                  alt="Family SUV"
+                  class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                  src="/images/rentals/family-suv.jpg"
+                  loading="lazy"
+                />
+              </div>
+              <div class="flex flex-grow flex-col p-6">
+                <h4 class="font-['Syne',system-ui,sans-serif] text-lg font-semibold text-[#04221c]">
+                  Family touring SUV
+                </h4>
+                <p class="font-['DM_Sans',system-ui,sans-serif] mt-2 text-sm text-[#1f3d34]/85">
+                  Spacious seating for extended Kerala circuits.
+                </p>
+                <div
+                  class="mt-4 flex flex-wrap items-center gap-3 border-y border-[#0b3d2e]/10 py-3 text-sm text-[#1f3d34]/80"
+                >
+                  <span class="flex items-center gap-1"
+                    ><span class="material-symbols-outlined text-base">group</span> 7</span
+                  >
+                  <span class="flex items-center gap-1"
+                    ><span class="material-symbols-outlined text-base">luggage</span> 5</span
+                  >
+                  <span class="flex items-center gap-1"
+                    ><span class="material-symbols-outlined text-base">settings</span> Auto</span
+                  >
+                </div>
+                <div class="mt-auto flex items-center justify-between pt-4">
+                  <span class="font-['Syne',system-ui,sans-serif] text-xl font-bold text-[#04221c]"
+                    >₹5,500<span class="text-sm font-medium text-[#1f3d34]/60">/day</span></span
+                  >
+                  <a
+                    href="/#planner"
+                    class="rounded-xl bg-[#04221c] px-5 py-2.5 text-sm font-semibold text-white transition hover:-translate-y-0.5"
+                    >Book</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="home-card flex flex-col justify-between rounded-3xl bg-gradient-to-br from-[#0b3d2e] to-[#04221c] p-8 text-white shadow-[0_24px_60px_rgba(11,61,46,0.35)]"
+            >
+              <div>
+                <span class="material-symbols-outlined mb-4 text-4xl text-[#5ce1c6]">verified_user</span>
+                <h4 class="font-['Syne',system-ui,sans-serif] text-xl font-semibold">Transparent pricing</h4>
+                <ul class="font-['DM_Sans',system-ui,sans-serif] mt-6 space-y-3 text-sm text-white/85">
+                  <li class="flex items-start gap-2">
+                    <span class="material-symbols-outlined mt-0.5 text-base text-[#5ce1c6]">check</span>
+                    Includes chauffeur allowance
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="material-symbols-outlined mt-0.5 text-base text-[#5ce1c6]">check</span>
+                    Comprehensive insurance
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="material-symbols-outlined mt-0.5 text-base text-[#5ce1c6]">check</span>
+                    Tolls & parking extra
+                  </li>
+                </ul>
+              </div>
+              <a
+                class="font-['DM_Sans',system-ui,sans-serif] mt-8 text-sm font-semibold underline decoration-[#5ce1c6] underline-offset-4 transition hover:text-[#5ce1c6]"
+                href="/terms#fleet-pricing">Read full terms</a
+              >
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="planner"
+      class="relative scroll-mt-24 overflow-hidden bg-[#fff7ef] px-margin-mobile py-24 md:scroll-mt-28 md:px-margin-desktop md:py-32"
+    >
+      <div
+        class="pointer-events-none absolute -right-24 top-20 h-96 w-96 rounded-full bg-[#ff8f6b]/25 blur-3xl"
+      >
+      </div>
+      <div
+        class="pointer-events-none absolute -left-32 bottom-0 h-[28rem] w-[28rem] rounded-full bg-[#5ce1c6]/20 blur-3xl"
+      >
+      </div>
+
+      <div class="relative mx-auto max-w-[min(96rem,calc(100%-2rem))]">
+        <div class="motion-reveal mx-auto mb-16 max-w-3xl text-center md:mb-20">
+          <p class="font-['Syne',system-ui,sans-serif] text-sm font-semibold uppercase tracking-[0.2em] text-[#c2410c]">
+            Planner
+          </p>
+          <h2
+            class="font-['Syne',system-ui,sans-serif] mt-4 text-4xl font-bold tracking-tight text-[#431407] md:text-5xl lg:text-6xl"
+          >
+            Design a journey with <span class="text-[#0f766e]">intention</span>.
+          </h2>
+          <p class="font-['DM_Sans',system-ui,sans-serif] mx-auto mt-6 max-w-2xl text-lg text-[#7c2d12]/85">
+            Share your vision—our designers choreograph Kerala around your pace, privacy, and palette.
+          </p>
+        </div>
+
+        {success && (
+          <div
+            class="motion-reveal mx-auto mb-10 max-w-3xl rounded-2xl border border-[#0f766e]/25 bg-[#d1fae5]/60 px-6 py-4 text-center font-['DM_Sans',system-ui,sans-serif] text-[#065f46]"
+            role="status"
+          >
+            Thank you — your inquiry was sent. Our travel designers will reach out shortly.
+          </div>
+        )}
+
+        <div class="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
+          <div class="motion-reveal relative hidden min-h-[420px] overflow-hidden rounded-3xl shadow-[0_28px_70px_rgba(67,20,7,0.18)] lg:col-span-5 lg:block">
+            <img
+              alt="Serene Kerala Backwaters"
+              class="absolute inset-0 h-full w-full object-cover transition duration-[2.5s] ease-out hover:scale-105"
+              src="/images/planner/aside.png"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#431407]/55 via-transparent to-transparent">
+            </div>
+            <p
+              class="font-['Syne',system-ui,sans-serif] absolute bottom-8 left-8 max-w-[14rem] text-2xl font-semibold leading-tight text-white drop-shadow-md"
+            >
+              Slow travel, sharply edited.
+            </p>
+          </div>
+          <div class="motion-reveal lg:col-span-7">
+            <div
+              class="rounded-3xl border border-[#fed7aa]/80 bg-white/90 p-8 shadow-[0_28px_70px_rgba(67,20,7,0.12)] backdrop-blur-md md:p-12"
+            >
+              <InquiryForm successRedirect="/?success=1#planner" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="about"
+      class="relative scroll-mt-24 bg-[#04221c] px-margin-mobile py-24 text-white md:scroll-mt-28 md:px-margin-desktop md:py-32"
+    >
+      <div class="pointer-events-none absolute inset-0 opacity-40">
+        <div
+          class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,143,107,0.35),transparent_45%),radial-gradient(circle_at_80%_0%,rgba(92,225,198,0.25),transparent_40%)]"
+        >
+        </div>
+      </div>
+      <div class="pointer-events-none absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[length:48px_48px] opacity-30">
+      </div>
+
+      <div class="relative mx-auto max-w-[min(96rem,calc(100%-2rem))]">
+        <div class="motion-reveal grid grid-cols-1 items-end gap-10 lg:grid-cols-12">
+          <div class="lg:col-span-7">
+            <p class="font-['Syne',system-ui,sans-serif] text-sm font-semibold uppercase tracking-[0.25em] text-[#5ce1c6]">
+              About
+            </p>
+            <h2 class="font-['Syne',system-ui,sans-serif] mt-4 text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
+              Crafting serenity for travelers who notice <span class="text-[#ffb48a]">everything</span>.
+            </h2>
+            <p class="font-['DM_Sans',system-ui,sans-serif] mt-6 max-w-2xl text-lg text-white/80">
+              Travel should feel like an extension of your aesthetic sensibilities—especially in God’s Own
+              Country.
+            </p>
+          </div>
+          <div class="motion-reveal motion-delay-1 lg:col-span-5">
+            <div class="relative aspect-[16/11] overflow-hidden rounded-3xl border border-white/10 shadow-[0_30px_80px_rgba(0,0,0,0.45)]">
+              <img
+                alt="Serene Kerala Backwaters"
+                class="h-full w-full object-cover transition duration-[2.4s] hover:scale-105"
+                src="/images/about/hero.jpg"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-tr from-[#04221c]/50 via-transparent to-transparent">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="motion-reveal mt-20 grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-5">
+            <h3 class="font-['Syne',system-ui,sans-serif] text-3xl font-semibold text-[#c9fff0]">Our vision</h3>
+            <p class="font-['DM_Sans',system-ui,sans-serif] mt-6 text-white/78">
+              Aesthetica Travels elevates the journey into an art form. We hand-select vehicles, guides, and
+              destinations so your time in Kerala reads like a composed sequence—not a checklist.
+            </p>
+            <p class="font-['DM_Sans',system-ui,sans-serif] mt-4 text-white/78">
+              We are the quiet curators: frictionless logistics, maximal atmosphere.
+            </p>
+          </div>
+          <div class="lg:col-span-6 lg:col-start-7">
+            <div class="relative aspect-[4/5] overflow-hidden rounded-3xl border border-white/10 shadow-[0_30px_80px_rgba(0,0,0,0.4)] md:aspect-square">
+              <img
+                alt="Detail of Kerala architecture"
+                class="h-full w-full object-cover transition duration-[2s] hover:scale-105"
+                src="/images/about/architecture.jpg"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="motion-reveal mt-24">
+          <div class="mb-12 text-center">
+            <h3 class="font-['Syne',system-ui,sans-serif] text-3xl font-semibold md:text-4xl">
+              The Aesthetica story
+            </h3>
+            <p class="font-['DM_Sans',system-ui,sans-serif] mx-auto mt-3 max-w-xl text-white/70">
+              From local aesthetes to a private fleet—built for poetry, not paperwork.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
+            <article
+              class="home-card group relative col-span-1 min-h-[280px] overflow-hidden rounded-3xl md:col-span-2"
+            >
+              <img
+                alt="Vintage compass and maps"
+                class="absolute inset-0 h-full w-full object-cover opacity-90 transition duration-700 group-hover:scale-105"
+                src="/images/about/story-genesis.jpg"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#04221c]/92 via-[#04221c]/25 to-transparent">
+              </div>
+              <div class="absolute bottom-0 left-0 p-8">
+                <h4 class="font-['Syne',system-ui,sans-serif] text-2xl font-semibold text-white">The genesis</h4>
+                <p class="font-['DM_Sans',system-ui,sans-serif] mt-2 max-w-md text-sm text-white/85">
+                  Founded by a collective who believed logistics should never interrupt the narrative of travel.
+                </p>
+              </div>
+            </article>
+            <article
+              class="home-card flex flex-col justify-between rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-md"
+            >
+              <span class="material-symbols-outlined text-4xl text-[#ffb48a]">diamond</span>
+              <div>
+                <h4 class="font-['Syne',system-ui,sans-serif] text-xl font-semibold text-[#c9fff0]">
+                  Uncompromising standards
+                </h4>
+                <p class="font-['DM_Sans',system-ui,sans-serif] mt-3 text-sm text-white/75">
+                  Every itinerary is vetted for luxury, privacy, and aesthetic harmony.
+                </p>
+              </div>
+            </article>
+            <article
+              class="home-card flex flex-col justify-between rounded-3xl border border-[#5ce1c6]/25 bg-[#031a15]/80 p-8"
+            >
+              <span class="material-symbols-outlined text-4xl text-[#5ce1c6]">nature_people</span>
+              <div>
+                <h4 class="font-['Syne',system-ui,sans-serif] text-xl font-semibold text-white">
+                  Local integration
+                </h4>
+                <p class="font-['DM_Sans',system-ui,sans-serif] mt-3 text-sm text-white/75">
+                  Partners who reflect Kerala’s true heritage—not theme-park pastiche.
+                </p>
+              </div>
+            </article>
+            <article
+              class="home-card group relative col-span-1 min-h-[280px] overflow-hidden rounded-3xl md:col-span-2"
+            >
+              <img
+                alt="Elegant transport"
+                class="absolute inset-0 h-full w-full object-cover opacity-90 transition duration-700 group-hover:scale-105"
+                src="/images/about/story-fleet.jpg"
+                loading="lazy"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#04221c]/92 via-[#04221c]/35 to-transparent"
+              >
+              </div>
+              <div class="absolute bottom-0 left-0 p-8">
+                <h4 class="font-['Syne',system-ui,sans-serif] text-2xl font-semibold text-white">The fleet</h4>
+                <p class="font-['DM_Sans',system-ui,sans-serif] mt-2 max-w-md text-sm text-white/85">
+                  A sanctuary of comfort moving seamlessly through the landscape.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="motion-reveal mt-24 rounded-3xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur-md md:p-14">
+          <div class="mb-10 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+            <div class="max-w-2xl">
+              <h3 class="font-['Syne',system-ui,sans-serif] text-3xl font-semibold md:text-4xl">
+                Plan with clarity
+              </h3>
+              <p class="font-['DM_Sans',system-ui,sans-serif] mt-3 text-lg text-white/75">
+                Quick answers, what to expect, and shortcuts to the parts of the trip you control—fleet,
+                itinerary, and policies.
+              </p>
+            </div>
+            <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
+              <a
+                href="/#planner"
+                class="font-['DM_Sans',system-ui,sans-serif] inline-flex items-center justify-center rounded-full bg-[#5ce1c6] px-8 py-3.5 text-sm font-semibold uppercase tracking-wide text-[#04221c] shadow-[0_12px_32px_rgba(92,225,198,0.35)] transition hover:-translate-y-0.5 hover:brightness-110"
+              >
+                Start an inquiry
+              </a>
+              <a
+                href="/#rentals"
+                class="font-['DM_Sans',system-ui,sans-serif] inline-flex items-center justify-center rounded-full border border-white/30 px-8 py-3.5 text-sm font-semibold uppercase tracking-wide text-white transition hover:border-[#5ce1c6] hover:text-[#c9fff0]"
+              >
+                View fleet &amp; rates
+              </a>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
+            <div
+              class="home-card flex flex-col rounded-2xl border border-white/10 bg-[#031a15]/90 p-6 transition duration-300 hover:border-[#5ce1c6]/40"
+            >
+              <span class="material-symbols-outlined mb-4 text-3xl text-[#5ce1c6]">schedule</span>
+              <h4 class="font-['Syne',system-ui,sans-serif] text-lg font-semibold text-white">
+                Response time
+              </h4>
+              <p class="font-['DM_Sans',system-ui,sans-serif] mt-2 text-sm leading-relaxed text-white/75">
+                We reply to new inquiries within <strong class="text-white">24 hours</strong>. Urgent
+                arrival or date changes? Mention it in your note—we prioritize time-sensitive requests.
+              </p>
+            </div>
+            <div
+              class="home-card flex flex-col rounded-2xl border border-white/10 bg-[#031a15]/90 p-6 transition duration-300 hover:border-[#5ce1c6]/40"
+            >
+              <span class="material-symbols-outlined mb-4 text-3xl text-[#ffb48a]">route</span>
+              <h4 class="font-['Syne',system-ui,sans-serif] text-lg font-semibold text-white">
+                What we design
+              </h4>
+              <p class="font-['DM_Sans',system-ui,sans-serif] mt-2 text-sm leading-relaxed text-white/75">
+                Routes, pacing, and experiences matched to your group—not generic packages. Share dates,
+                destinations, and budget; we return a tailored outline.
+              </p>
+            </div>
+            <div
+              class="home-card flex flex-col rounded-2xl border border-white/10 bg-[#031a15]/90 p-6 transition duration-300 hover:border-[#5ce1c6]/40"
+            >
+              <span class="material-symbols-outlined mb-4 text-3xl text-[#c9fff0]">directions_car</span>
+              <h4 class="font-['Syne',system-ui,sans-serif] text-lg font-semibold text-white">
+                Fleet &amp; pricing
+              </h4>
+              <p class="font-['DM_Sans',system-ui,sans-serif] mt-2 text-sm leading-relaxed text-white/75">
+                Sedans and SUVs with chauffeur allowance and insurance—see
+                <a class="font-semibold text-[#5ce1c6] underline underline-offset-2 hover:text-[#c9fff0]" href="/#rentals"
+                  >rates above</a
+                >. Tolls and parking are billed separately; full detail is in our terms.
+              </p>
+            </div>
+            <div
+              class="home-card flex flex-col rounded-2xl border border-white/10 bg-[#031a15]/90 p-6 transition duration-300 hover:border-[#5ce1c6]/40"
+            >
+              <span class="material-symbols-outlined mb-4 text-3xl text-[#5ce1c6]">travel_explore</span>
+              <h4 class="font-['Syne',system-ui,sans-serif] text-lg font-semibold text-white">
+                Explore first
+              </h4>
+              <p class="font-['DM_Sans',system-ui,sans-serif] mt-2 text-sm leading-relaxed text-white/75">
+                Not sure where to start?
+                <a class="font-semibold text-[#5ce1c6] underline underline-offset-2 hover:text-[#c9fff0]" href="/explore"
+                  >Browse destinations and packages</a
+                >
+                before you lock dates.
+              </p>
+            </div>
+            <div
+              class="home-card flex flex-col rounded-2xl border border-white/10 bg-[#031a15]/90 p-6 transition duration-300 hover:border-[#5ce1c6]/40"
+            >
+              <span class="material-symbols-outlined mb-4 text-3xl text-[#ffb48a]">gavel</span>
+              <h4 class="font-['Syne',system-ui,sans-serif] text-lg font-semibold text-white">
+                Policies
+              </h4>
+              <p class="font-['DM_Sans',system-ui,sans-serif] mt-2 text-sm leading-relaxed text-white/75">
+                Cancellation, fleet pricing notes, and liability are spelled out in
+                <a class="font-semibold text-[#5ce1c6] underline underline-offset-2 hover:text-[#c9fff0]" href="/terms"
+                  >Terms</a
+                >
+                and
+                <a class="font-semibold text-[#5ce1c6] underline underline-offset-2 hover:text-[#c9fff0]" href="/privacy"
+                  >Privacy</a
+                >—read before you confirm.
+              </p>
+            </div>
+            <div
+              class="home-card flex flex-col rounded-2xl border border-white/10 bg-[#031a15]/90 p-6 transition duration-300 hover:border-[#5ce1c6]/40"
+            >
+              <span class="material-symbols-outlined mb-4 text-3xl text-[#c9fff0]">support_agent</span>
+              <h4 class="font-['Syne',system-ui,sans-serif] text-lg font-semibold text-white">
+                Direct contact
+              </h4>
+              <p class="font-['DM_Sans',system-ui,sans-serif] mt-2 text-sm leading-relaxed text-white/75">
+                Prefer email or a call? Reach us on the
+                <a class="font-semibold text-[#5ce1c6] underline underline-offset-2 hover:text-[#c9fff0]" href="/contact"
+                  >contact page</a
+                >
+                for phone and form options.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <style>
+    .home-hero-mesh {
+      background:
+        radial-gradient(ellipse 90% 70% at 15% 20%, rgba(255, 143, 107, 0.45), transparent 55%),
+        radial-gradient(ellipse 80% 60% at 85% 75%, rgba(92, 225, 198, 0.35), transparent 50%),
+        radial-gradient(circle at 50% 100%, rgba(255, 231, 194, 0.2), transparent 55%);
+    }
+    .home-noise {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+    }
+    .home-orb {
+      animation: home-orb-drift 18s ease-in-out infinite alternate;
+    }
+    .home-orb-b {
+      animation-duration: 22s;
+      animation-delay: -4s;
+    }
+    @keyframes home-orb-drift {
+      0% {
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+      100% {
+        transform: translate3d(30px, -24px, 0) scale(1.06);
+      }
+    }
+    .home-hero-img {
+      animation: home-ken 26s ease-in-out infinite alternate;
+    }
+    @keyframes home-ken {
+      0% {
+        transform: scale(1.05) translate3d(0, 0, 0);
+      }
+      100% {
+        transform: scale(1.12) translate3d(-1.5%, 1%, 0);
+      }
+    }
+    .home-blink {
+      animation: home-blink 1.8s ease-in-out infinite;
+    }
+    @keyframes home-blink {
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.35;
+        transform: scale(0.85);
+      }
+    }
+    .motion-reveal {
+      opacity: 0;
+      transform: translate3d(0, 36px, 0) scale(0.98);
+      filter: blur(6px);
+      transition:
+        opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+      transition-delay: var(--motion-delay, 0s);
+      will-change: opacity, transform, filter;
+    }
+    .motion-reveal.is-visible {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale(1);
+      filter: blur(0);
+    }
+    .motion-delay-1 {
+      --motion-delay: 0.08s;
+    }
+    .motion-delay-2 {
+      --motion-delay: 0.16s;
+    }
+    .motion-delay-3 {
+      --motion-delay: 0.24s;
+    }
+    .motion-delay-4 {
+      --motion-delay: 0.32s;
+    }
+    .motion-delay-5 {
+      --motion-delay: 0.4s;
+    }
+    .motion-delay-6 {
+      --motion-delay: 0.48s;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .home-orb,
+      .home-hero-img,
+      .home-blink,
+      .home-cta-pulse {
+        animation: none !important;
+      }
+      .motion-reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+
+  <script is:inline>
+    (function () {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const nodes = document.querySelectorAll('.motion-reveal');
+      if (!nodes.length) return;
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add('is-visible');
+          });
+        },
+        { threshold: 0.12, rootMargin: '0px 0px -8% 0px' },
+      );
+      nodes.forEach((n) => io.observe(n));
+    })();
+  </script>
+</BaseLayout>

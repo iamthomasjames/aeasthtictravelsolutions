@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../site.config';
+---
+
+<BaseLayout title={`Privacy · ${site.name}`} description="How Aesthetica Travels handles information you share when you inquire or book with us.">
+  <main class="mx-auto max-w-container-max px-margin-mobile py-section-padding md:px-margin-desktop">
+    <h1 class="font-headline-lg text-headline-lg text-primary mb-6">Privacy</h1>
+    <div class="font-body-md text-body-md text-on-surface-variant max-w-3xl space-y-6">
+      <p>
+        This page is a placeholder for your privacy policy. Describe what data you collect (for
+        example inquiry forms), how long you retain it, and which processors or email services you
+        use.
+      </p>
+      <p>
+        Inquiry submissions may be delivered via a secure third-party form provider to{' '}
+        {site.inquiryEmail}. Configure your provider’s privacy disclosures accordingly.
+      </p>
+    </div>
+  </main>
+</BaseLayout>

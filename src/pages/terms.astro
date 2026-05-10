@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../site.config';
+---
+
+<BaseLayout title={`Terms · ${site.name}`} description="Terms of service for tours, rentals, and inquiries with Aesthetica Travels.">
+  <main class="mx-auto max-w-container-max px-margin-mobile py-section-padding md:px-margin-desktop">
+    <h1 class="font-headline-lg text-headline-lg text-primary mb-6">Terms</h1>
+    <div class="font-body-md text-body-md text-on-surface-variant max-w-3xl space-y-6">
+      <p>
+        This page is a placeholder for your legal terms. Replace this copy with policies reviewed by
+        your counsel before launch.
+      </p>
+      <p id="fleet-pricing">
+        <strong class="text-primary">Fleet pricing:</strong> Sample rates shown on the Fleet page are
+        indicative. Chauffeur allowance, comprehensive insurance, tolls, parking, fuel surcharges,
+        and seasonal adjustments may apply. Final quotes are confirmed in writing at the time of
+        booking.
+      </p>
+      <p>
+        For questions, contact{' '}
+        <a class="text-secondary underline hover:opacity-80" href={`mailto:${site.inquiryEmail}`}
+          >{site.inquiryEmail}</a
+        >.
+      </p>
+    </div>
+  </main>
+</BaseLayout>

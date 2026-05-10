@@ -1,0 +1,159 @@
+---
+import { site } from '../site.config';
+
+interface Props {
+  /** Path or absolute URL for post-submit redirect (default: /planner?success=1) */
+  successRedirect?: string;
+}
+
+const { successRedirect = '/planner?success=1' } = Astro.props;
+
+const accessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ?? '';
+const configured = Boolean(accessKey);
+const redirectUrl = new URL(successRedirect, site.url).href;
+---
+
+{!configured && (
+  <p class="text-error bg-error-container/30 mb-6 rounded-lg p-4 text-sm font-body-md text-body-md">
+    Form submissions are not configured yet. Add{' '}
+    <code class="font-mono text-xs">PUBLIC_WEB3FORMS_ACCESS_KEY</code> to your environment (see{' '}
+    <code class="font-mono text-xs">.env.example</code>). Deliveries are routed to {site.inquiryEmail}.
+  </p>
+)}
+
+<form
+  action="https://api.web3forms.com/submit"
+  method="POST"
+  class="space-y-8"
+>
+  <input type="hidden" name="access_key" value={accessKey} />
+  <input type="hidden" name="subject" value={`New inquiry · ${site.name}`} />
+  <input type="hidden" name="redirect" value={redirectUrl} />
+  <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
+
+  <div class="space-y-4">
+    <h3 class="font-headline-sm text-headline-sm text-primary border-surface-variant border-b pb-2">
+      Where to?
+    </h3>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <label
+        class="border-outline-variant hover:bg-surface-container-low flex cursor-pointer items-center space-x-3 rounded-lg border p-4 transition-colors"
+      >
+        <input
+          class="text-primary border-outline focus:ring-primary"
+          name="destination"
+          type="radio"
+          value="Munnar Hills"
+          required={configured || undefined}
+          disabled={!configured}
+        />
+        <span class="font-body-md text-body-md text-on-surface">Munnar Hills</span>
+      </label>
+      <label
+        class="border-outline-variant hover:bg-surface-container-low flex cursor-pointer items-center space-x-3 rounded-lg border p-4 transition-colors"
+      >
+        <input class="text-primary border-outline focus:ring-primary" name="destination" type="radio" value="Alleppey Backwaters" disabled={!configured} />
+        <span class="font-body-md text-body-md text-on-surface">Alleppey Backwaters</span>
+      </label>
+      <label
+        class="border-outline-variant hover:bg-surface-container-low flex cursor-pointer items-center space-x-3 rounded-lg border p-4 transition-colors"
+      >
+        <input class="text-primary border-outline focus:ring-primary" name="destination" type="radio" value="Varkala Beaches" disabled={!configured} />
+        <span class="font-body-md text-body-md text-on-surface">Varkala Beaches</span>
+      </label>
+      <label
+        class="border-outline-variant hover:bg-surface-container-low flex cursor-pointer items-center space-x-3 rounded-lg border p-4 transition-colors"
+      >
+        <input class="text-primary border-outline focus:ring-primary" name="destination" type="radio" value="Undecided" disabled={!configured} />
+        <span class="font-body-md text-body-md text-on-surface">Undecided</span>
+      </label>
+    </div>
+  </div>
+
+  <div class="space-y-4">
+    <h3 class="font-headline-sm text-headline-sm text-primary border-surface-variant border-b pb-2">
+      When & Who?
+    </h3>
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+      <div>
+        <label class="font-label-md text-label-md text-on-surface-variant mb-2 block" for="travel_dates">
+          Travel Dates
+        </label>
+        <input
+          id="travel_dates"
+          name="travel_dates"
+          class="border-outline-variant focus:border-primary w-full border-0 border-b bg-transparent px-0 py-2 font-body-md text-body-md text-on-surface placeholder:text-outline focus:ring-0"
+          placeholder="Select dates"
+          type="text"
+          disabled={!configured}
+        />
+      </div>
+      <div>
+        <label class="font-label-md text-label-md text-on-surface-variant mb-2 block" for="guests">
+          Number of Guests
+        </label>
+        <select
+          id="guests"
+          name="guests"
+          class="border-outline-variant focus:border-primary w-full border-0 border-b bg-transparent px-0 py-2 font-body-md text-body-md text-on-surface focus:ring-0"
+          disabled={!configured}
+        >
+          <option>1-2 Guests</option>
+          <option>3-4 Guests</option>
+          <option>5+ Guests</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="space-y-4">
+    <h3 class="font-headline-sm text-headline-sm text-primary border-surface-variant border-b pb-2">
+      Contact (optional)
+    </h3>
+    <div>
+      <label class="font-label-md text-label-md text-on-surface-variant mb-2 block" for="email">
+        Email for replies
+      </label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        class="border-outline-variant focus:border-primary w-full border-0 border-b bg-transparent px-0 py-2 font-body-md text-body-md text-on-surface placeholder:text-outline focus:ring-0"
+        placeholder="you@example.com"
+        disabled={!configured}
+      />
+    </div>
+  </div>
+
+  <div class="space-y-4">
+    <h3 class="font-headline-sm text-headline-sm text-primary border-surface-variant border-b pb-2">
+      Your Vision
+    </h3>
+    <div>
+      <label class="font-label-md text-label-md text-on-surface-variant mb-2 block" for="message">
+        Tell us about your ideal experience
+      </label>
+      <textarea
+        id="message"
+        name="message"
+        class="border-outline-variant focus:border-primary font-body-md text-body-md text-on-surface placeholder:text-outline h-auto min-h-[120px] w-full resize-none rounded-lg border bg-transparent p-4 focus:ring-0"
+        placeholder="Interests, special occasions, or specific requirements..."
+        rows="4"
+        disabled={!configured}
+      ></textarea>
+    </div>
+  </div>
+
+  <div class="pt-6">
+    <button
+      type="submit"
+      disabled={!configured}
+      class="disabled:bg-surface-dim w-full rounded-full bg-primary py-4 font-label-md text-label-md text-on-primary transition-colors duration-300 hover:bg-surface-tint disabled:cursor-not-allowed disabled:opacity-60"
+    >
+      Submit Inquiry
+    </button>
+    <p class="font-body-md text-body-md text-on-surface-variant mt-4 text-center text-sm">
+      Our travel designers will respond within 24 hours.
+    </p>
+  </div>
+</form>

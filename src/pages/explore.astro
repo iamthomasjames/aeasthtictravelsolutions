@@ -1,0 +1,149 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../site.config';
+---
+
+<BaseLayout
+  title={`Explore Kerala · ${site.name}`}
+  description="A curated collection of serene Kerala landscapes—from mist-draped tea gardens to tranquil backwaters—for the discerning explorer."
+  ogImage="/images/explore/divider.jpg"
+>
+  <main class="w-full">
+    <section class="mx-auto w-full max-w-container-max px-margin-mobile pb-16 pt-24 md:px-margin-desktop">
+      <div class="grid grid-cols-1 gap-gutter md:grid-cols-12">
+        <div class="flex flex-col justify-center md:col-span-8">
+          <h1 class="font-display-lg text-display-lg text-primary mb-6 text-balance">
+            Discover the soul of Kerala.
+          </h1>
+          <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+            A curated collection of serene landscapes, from mist-draped tea gardens to tranquil
+            backwaters. Experience travel designed for the discerning explorer.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="mx-auto w-full max-w-container-max px-margin-mobile pb-section-padding md:px-margin-desktop"
+    >
+      <div class="grid auto-rows-[300px] grid-cols-1 gap-gutter md:auto-rows-[400px] md:grid-cols-12">
+        <div
+          class="group shadow-[0px_10px_30px_rgba(11,61,46,0.05)] relative col-span-1 overflow-hidden bg-surface-container md:col-span-8"
+        >
+          <img
+            alt="Munnar Tea Gardens"
+            class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            src="/images/explore/munnar.jpg"
+            loading="lazy"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent"
+          >
+          </div>
+          <div class="absolute inset-0 flex flex-col justify-end p-8">
+            <div
+              class="bg-tertiary-container text-on-tertiary-container font-label-md mb-4 inline-flex w-max items-center rounded-full px-3 py-1 text-[12px]"
+            >
+              Hill Station
+            </div>
+            <h2 class="font-headline-lg text-headline-lg text-on-primary mb-2">Munnar</h2>
+            <p class="font-body-md text-body-md max-w-lg text-on-primary/90">
+              Endless expanses of emerald tea plantations shrouded in mist. A sanctuary of cool
+              mountain air and colonial-era charm.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="group shadow-[0px_10px_30px_rgba(11,61,46,0.05)] relative col-span-1 overflow-hidden bg-surface-container md:col-span-4"
+        >
+          <img
+            alt="Alleppey Backwaters"
+            class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            src="/images/explore/alleppey.jpg"
+            loading="lazy"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent"
+          >
+          </div>
+          <div class="absolute inset-0 flex flex-col justify-end p-8">
+            <div
+              class="bg-tertiary-container text-on-tertiary-container font-label-md mb-4 inline-flex w-max items-center rounded-full px-3 py-1 text-[12px]"
+            >
+              Backwaters
+            </div>
+            <h2 class="font-headline-md text-headline-md text-on-primary mb-2">Alleppey</h2>
+            <p class="font-body-md text-body-md text-on-primary/90">
+              Glide through a labyrinth of tranquil waterways on a private houseboat.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="group shadow-[0px_10px_30px_rgba(11,61,46,0.05)] relative col-span-1 overflow-hidden bg-surface-container md:col-span-5"
+        >
+          <img
+            alt="Wayanad Forests"
+            class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            src="/images/explore/wayanad.jpg"
+            loading="lazy"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent"
+          >
+          </div>
+          <div class="absolute inset-0 flex flex-col justify-end p-8">
+            <div
+              class="bg-tertiary-container text-on-tertiary-container font-label-md mb-4 inline-flex w-max items-center rounded-full px-3 py-1 text-[12px]"
+            >
+              Wildlife & Forest
+            </div>
+            <h2 class="font-headline-md text-headline-md text-on-primary mb-2">Wayanad</h2>
+            <p class="font-body-md text-body-md text-on-primary/90">
+              Immerse yourself in pristine forests, spice plantations, and hidden waterfalls.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="group shadow-[0px_10px_30px_rgba(11,61,46,0.05)] relative col-span-1 overflow-hidden bg-surface-container md:col-span-7"
+        >
+          <img
+            alt="Varkala Beach"
+            class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            src="/images/explore/varkala.jpg"
+            loading="lazy"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent"
+          >
+          </div>
+          <div class="absolute inset-0 flex flex-col justify-end p-8">
+            <div
+              class="bg-tertiary-container text-on-tertiary-container font-label-md mb-4 inline-flex w-max items-center rounded-full px-3 py-1 text-[12px]"
+            >
+              Coastal Retreat
+            </div>
+            <h2 class="font-headline-lg text-headline-lg text-on-primary mb-2">Varkala</h2>
+            <p class="font-body-md text-body-md max-w-lg text-on-primary/90">
+              Dramatic red cliffs rising from the Arabian Sea, offering unparalleled sunsets and
+              spiritual rejuvenation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="relative my-section-padding h-[614px] w-full overflow-hidden">
+      <img
+        alt="Kerala Landscape Divider"
+        class="absolute inset-0 h-full w-full object-cover"
+        style="object-position: center 60%;"
+        src="/images/explore/divider.jpg"
+        loading="lazy"
+      />
+      <div class="absolute inset-0 bg-primary/20"></div>
+    </div>
+  </main>
+</BaseLayout>

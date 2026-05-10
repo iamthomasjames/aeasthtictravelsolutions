@@ -1,0 +1,237 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../site.config';
+---
+
+<BaseLayout
+  title={`Our Fleet · ${site.name}`}
+  description="Explore Kerala with comfort and elegance. Curated vehicles maintained to the highest standards for a pristine journey through the tropics."
+  ogImage="/images/rentals/executive-sedan.jpg"
+>
+  <header
+    class="mx-auto max-w-container-max px-margin-mobile py-section-padding text-center md:px-margin-desktop md:text-left"
+  >
+    <h1 class="font-display-lg text-display-lg text-primary mb-6">Our Fleet</h1>
+    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+      Explore Kerala with comfort and elegance. Select from our curated collection of vehicles,
+      maintained to the highest standards for a pristine journey through the tropics.
+    </p>
+  </header>
+
+  <main class="mx-auto max-w-container-max px-margin-mobile pb-section-padding md:px-margin-desktop">
+    <section class="mb-24">
+      <h2 class="font-headline-lg text-headline-lg text-primary border-outline-variant mb-8 border-b pb-4">
+        Luxury Sedans
+      </h2>
+      <div class="grid grid-cols-1 gap-gutter md:grid-cols-12">
+        <article
+          class="group shadow-[0px_10px_30px_rgba(11,61,46,0.05)] col-span-1 flex flex-col overflow-hidden rounded-lg bg-surface-container-lowest md:col-span-8 md:flex-row"
+        >
+          <div class="relative min-h-[300px] w-full md:w-1/2">
+            <img
+              alt="Luxury Sedan"
+              class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              src="/images/rentals/executive-sedan.jpg"
+              loading="lazy"
+            />
+          </div>
+          <div class="flex w-full flex-col justify-between p-8 md:w-1/2">
+            <div>
+              <div class="mb-4 flex items-start justify-between">
+                <h3 class="font-headline-md text-headline-md text-primary">Executive Sedan</h3>
+                <span
+                  class="bg-tertiary-container text-on-tertiary-container font-label-md text-label-md rounded-full px-3 py-1"
+                  >Popular</span
+                >
+              </div>
+              <p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                Ideal for couples or solo travelers seeking a smooth, elegant ride through scenic
+                coastal roads.
+              </p>
+              <ul class="mb-8 space-y-3">
+                <li class="flex items-center gap-3 font-body-md text-body-md text-on-surface">
+                  <span class="material-symbols-outlined text-secondary">group</span>
+                  Up to 3 Passengers
+                </li>
+                <li class="flex items-center gap-3 font-body-md text-body-md text-on-surface">
+                  <span class="material-symbols-outlined text-secondary">ac_unit</span>
+                  Climate Control
+                </li>
+                <li class="flex items-center gap-3 font-body-md text-body-md text-on-surface">
+                  <span class="material-symbols-outlined text-secondary">luggage</span>
+                  2 Large Suitcases
+                </li>
+              </ul>
+            </div>
+            <div class="border-surface-variant mt-auto flex items-center justify-between border-t pt-6">
+              <div>
+                <span class="font-label-md text-label-md text-on-surface-variant block">Starting from</span>
+                <span class="font-headline-sm text-headline-sm text-primary"
+                  >₹3,500 <span class="font-body-md text-body-md text-on-surface-variant">/ day</span></span
+                >
+              </div>
+              <a
+                href="/planner"
+                class="rounded-lg bg-primary px-6 py-3 font-label-md text-label-md text-on-primary transition-opacity hover:opacity-90"
+                >Book Now</a
+              >
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="group shadow-[0px_10px_30px_rgba(11,61,46,0.05)] col-span-1 flex flex-grow flex-col overflow-hidden rounded-lg bg-surface-container-lowest md:col-span-4"
+        >
+          <div class="relative h-48 w-full md:h-64">
+            <img
+              alt="Premium Sedan"
+              class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              src="/images/rentals/premium-sedan.jpg"
+              loading="lazy"
+            />
+          </div>
+          <div class="flex flex-grow flex-col p-6">
+            <h3 class="font-headline-sm text-headline-sm text-primary mb-2">Premium Sedan</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">
+              Enhanced comfort with premium interiors for longer journeys between hill stations.
+            </p>
+            <div class="mb-6 flex items-center gap-4 text-on-surface-variant">
+              <span class="flex items-center gap-1 font-label-md text-label-md" title="Passengers"
+                ><span class="material-symbols-outlined text-sm">group</span> 4</span
+              >
+              <span class="flex items-center gap-1 font-label-md text-label-md" title="Luggage"
+                ><span class="material-symbols-outlined text-sm">luggage</span> 3</span
+              >
+            </div>
+            <div class="border-surface-variant mt-auto flex items-center justify-between border-t pt-4">
+              <span class="font-headline-sm text-headline-sm text-primary"
+                >₹4,500<span class="text-sm font-normal text-on-surface-variant">/d</span></span
+              >
+              <a
+                href="/planner"
+                class="rounded-lg border-[1.5px] border-secondary px-4 py-2 font-label-md text-label-md text-secondary transition-colors hover:bg-secondary/5"
+                >Book</a
+              >
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="mb-24">
+      <h2 class="font-headline-lg text-headline-lg text-primary border-outline-variant mb-8 border-b pb-4">
+        Premium SUVs
+      </h2>
+      <div class="grid grid-cols-1 gap-gutter md:grid-cols-3">
+        <article
+          class="group shadow-[0px_10px_30px_rgba(11,61,46,0.05)] flex flex-col overflow-hidden rounded-lg bg-surface-container-lowest"
+        >
+          <div class="relative h-56 w-full">
+            <img
+              alt="Luxury SUV"
+              class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              src="/images/rentals/luxury-suv.jpg"
+              loading="lazy"
+            />
+          </div>
+          <div class="flex flex-grow flex-col p-6">
+            <h3 class="font-headline-sm text-headline-sm text-primary mb-2">Luxury 4x4 SUV</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-6">
+              Perfect for navigating the winding roads of Munnar with commanding views.
+            </p>
+            <div
+              class="border-surface-variant mb-6 flex items-center gap-4 border-y py-3 text-on-surface-variant"
+            >
+              <span class="flex items-center gap-1 font-label-md text-label-md"
+                ><span class="material-symbols-outlined">group</span> 6</span
+              >
+              <span class="flex items-center gap-1 font-label-md text-label-md"
+                ><span class="material-symbols-outlined">luggage</span> 4</span
+              >
+              <span class="flex items-center gap-1 font-label-md text-label-md"
+                ><span class="material-symbols-outlined">settings</span> Auto</span
+              >
+            </div>
+            <div class="mt-auto flex items-center justify-between">
+              <span class="font-headline-sm text-headline-sm text-primary"
+                >₹6,000<span class="text-sm font-normal text-on-surface-variant">/day</span></span
+              >
+              <a
+                href="/planner"
+                class="rounded-lg bg-primary px-5 py-2.5 font-label-md text-label-md text-on-primary transition-opacity hover:opacity-90"
+                >Book</a
+              >
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="group shadow-[0px_10px_30px_rgba(11,61,46,0.05)] flex flex-col overflow-hidden rounded-lg bg-surface-container-lowest"
+        >
+          <div class="relative h-56 w-full">
+            <img
+              alt="Family SUV"
+              class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              src="/images/rentals/family-suv.jpg"
+              loading="lazy"
+            />
+          </div>
+          <div class="flex flex-grow flex-col p-6">
+            <h3 class="font-headline-sm text-headline-sm text-primary mb-2">Family Touring SUV</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-6">
+              Spacious seating and ample cargo room for family excursions across the state.
+            </p>
+            <div
+              class="border-surface-variant mb-6 flex items-center gap-4 border-y py-3 text-on-surface-variant"
+            >
+              <span class="flex items-center gap-1 font-label-md text-label-md"
+                ><span class="material-symbols-outlined">group</span> 7</span
+              >
+              <span class="flex items-center gap-1 font-label-md text-label-md"
+                ><span class="material-symbols-outlined">luggage</span> 5</span
+              >
+              <span class="flex items-center gap-1 font-label-md text-label-md"
+                ><span class="material-symbols-outlined">settings</span> Auto</span
+              >
+            </div>
+            <div class="mt-auto flex items-center justify-between">
+              <span class="font-headline-sm text-headline-sm text-primary"
+                >₹5,500<span class="text-sm font-normal text-on-surface-variant">/day</span></span
+              >
+              <a
+                href="/planner"
+                class="rounded-lg bg-primary px-5 py-2.5 font-label-md text-label-md text-on-primary transition-opacity hover:opacity-90"
+                >Book</a
+              >
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="shadow-[0px_10px_30px_rgba(11,61,46,0.05)] bg-surface-tint text-on-primary flex flex-col items-start justify-center rounded-lg p-8"
+        >
+          <span class="material-symbols-outlined mb-4 text-4xl">verified_user</span>
+          <h3 class="font-headline-sm text-headline-sm mb-4">Transparent Pricing</h3>
+          <ul class="font-body-md text-body-md mb-8 space-y-3 text-on-primary/90">
+            <li class="flex items-start gap-2">
+              <span class="material-symbols-outlined mt-1 text-sm">check</span>
+              Includes chauffeur allowance
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="material-symbols-outlined mt-1 text-sm">check</span>
+              Comprehensive insurance
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="material-symbols-outlined mt-1 text-sm">check</span>
+              Tolls & parking extra
+            </li>
+          </ul>
+          <a
+            class="font-label-md text-label-md mt-auto underline transition-colors hover:text-white/80"
+            href="/terms#fleet-pricing">Read Full Terms</a
+          >
+        </article>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

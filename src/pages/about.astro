@@ -1,0 +1,222 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../site.config';
+---
+
+<BaseLayout
+  title={`About Us · ${site.name}`}
+  description="We believe travel should be an effortless extension of your aesthetic sensibilities. Discover the soul of Kerala through meticulously curated journeys."
+  ogImage="/images/about/hero.jpg"
+>
+  <header class="relative flex h-[614px] min-h-[500px] w-full items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img
+        alt="Serene Kerala Backwaters"
+        class="h-full w-full object-cover object-center"
+        src="/images/about/hero.jpg"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-primary/30 mix-blend-multiply"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+    </div>
+    <div class="relative z-10 mx-auto mt-20 max-w-container-max px-margin-mobile text-center md:px-margin-desktop">
+      <h1 class="font-display-lg text-display-lg text-on-primary mb-6 drop-shadow-lg">
+        Crafting Serenity
+      </h1>
+      <p class="font-body-lg text-body-lg mx-auto max-w-2xl text-on-primary/90 drop-shadow-md">
+        We believe travel should be an effortless extension of your aesthetic sensibilities. Discover
+        the soul of Kerala through our meticulously curated journeys.
+      </p>
+    </div>
+  </header>
+
+  <main class="w-full">
+    <section class="mx-auto max-w-container-max px-margin-mobile py-section-padding md:px-margin-desktop">
+      <div class="grid grid-cols-1 items-center gap-gutter md:grid-cols-12">
+        <div class="order-2 mt-12 md:order-1 md:col-span-5 md:mt-0">
+          <h2 class="font-headline-lg text-headline-lg text-primary mb-6">Our Vision</h2>
+          <p class="font-body-md text-body-md text-on-surface-variant mb-6">
+            Aesthetica Travels was born from a singular desire: to elevate the journey itself into an
+            art form. We saw a landscape in Kerala—rich in culture, overflowing with natural
+            beauty—that deserved to be experienced without friction, without compromise.
+          </p>
+          <p class="font-body-md text-body-md text-on-surface-variant">
+            Our vision is to act as the quiet curator of your experiences. We hand-select every
+            vehicle, every guide, and every destination to ensure that your time in God’s Own Country
+            is not just a vacation, but a beautifully composed sequence of moments.
+          </p>
+        </div>
+        <div class="order-1 md:order-2 md:col-span-6 md:col-start-7">
+          <div
+            class="shadow-[0px_10px_30px_rgba(11,61,46,0.1)] relative aspect-[4/5] overflow-hidden rounded-lg md:aspect-square"
+          >
+            <img
+              alt="Detail of Kerala architecture"
+              class="h-full w-full object-cover"
+              src="/images/about/architecture.jpg"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="relative my-12 h-[400px] w-full overflow-hidden">
+      <img
+        alt="Munnar Tea Gardens"
+        class="h-full w-full object-cover object-center"
+        src="/images/about/divider.jpg"
+        loading="lazy"
+      />
+      <div class="absolute inset-0 bg-primary/20"></div>
+    </div>
+
+    <section class="mx-auto max-w-container-max px-margin-mobile py-section-padding md:px-margin-desktop">
+      <div class="mb-16 text-center">
+        <h2 class="font-headline-lg text-headline-lg text-primary mb-4">The Aesthetica Story</h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant mx-auto max-w-2xl">
+          A journey from passion to curation.
+        </p>
+      </div>
+      <div class="grid auto-rows-[300px] grid-cols-1 gap-gutter md:grid-cols-3">
+        <div
+          class="group shadow-[0px_10px_30px_rgba(11,61,46,0.05)] bg-surface-container relative col-span-1 overflow-hidden rounded-lg md:col-span-2"
+        >
+          <img
+            alt="Vintage compass and maps"
+            class="absolute inset-0 h-full w-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105"
+            src="/images/about/story-genesis.jpg"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-8">
+            <h3 class="font-headline-md text-headline-md text-on-primary mb-2">The Genesis</h3>
+            <p class="font-body-md text-body-md max-w-md text-on-primary/90">
+              Founded by a collective of local aesthetes who believed the logistics of travel shouldn't
+              interrupt its poetry.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="shadow-[0px_10px_30px_rgba(11,61,46,0.05)] bg-primary-container flex flex-col justify-between overflow-hidden rounded-lg p-8"
+        >
+          <span class="material-symbols-outlined text-tertiary-container mb-4 text-4xl">diamond</span>
+          <div>
+            <h3 class="font-headline-sm text-headline-sm text-on-primary-container mb-4">
+              Uncompromising Standards
+            </h3>
+            <p class="font-body-md text-body-md text-on-primary-container/80">
+              Every itinerary is rigorously vetted to meet our exacting standards of luxury, privacy,
+              and aesthetic harmony.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="shadow-[0px_10px_30px_rgba(11,61,46,0.05)] border-outline-variant bg-surface-container flex flex-col justify-between overflow-hidden rounded-lg border p-8"
+        >
+          <span class="material-symbols-outlined text-secondary mb-4 text-4xl">nature_people</span>
+          <div>
+            <h3 class="font-headline-sm text-headline-sm text-primary mb-4">Local Integration</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+              We partner exclusively with properties and artisans who reflect the true, unvarnished
+              beauty of Kerala's heritage.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="group shadow-[0px_10px_30px_rgba(11,61,46,0.05)] bg-surface-container relative col-span-1 overflow-hidden rounded-lg md:col-span-2"
+        >
+          <img
+            alt="Elegant transport"
+            class="absolute inset-0 h-full w-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105"
+            src="/images/about/story-fleet.jpg"
+            loading="lazy"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent"
+          >
+          </div>
+          <div class="absolute bottom-0 left-0 p-8">
+            <h3 class="font-headline-md text-headline-md text-on-primary mb-2">The Fleet</h3>
+            <p class="font-body-md text-body-md max-w-md text-on-primary/90">
+              Our private fleet is maintained not just for reliability, but as a sanctuary of comfort
+              moving seamlessly through the landscape.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-surface-container-lowest px-margin-mobile py-section-padding md:px-margin-desktop">
+      <div class="mx-auto max-w-container-max">
+        <div class="mb-16 text-center">
+          <h2 class="font-headline-lg text-headline-lg text-primary mb-4">The Curators</h2>
+          <p class="font-body-lg text-body-lg text-on-surface-variant mx-auto max-w-2xl">
+            The quiet architects of your perfect journey.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 gap-gutter sm:grid-cols-2 md:grid-cols-4">
+          <div class="group">
+            <div
+              class="shadow-[0px_10px_30px_rgba(11,61,46,0.05)] relative mb-6 aspect-[4/5] w-full overflow-hidden rounded-lg"
+            >
+              <img
+                alt="Portrait of Arjun Menon"
+                class="h-full w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
+                src="/images/about/team-arjun.jpg"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="font-headline-sm text-headline-sm text-primary mb-1">Arjun Menon</h3>
+            <p class="font-label-md text-label-md text-secondary">Founder & Lead Curator</p>
+          </div>
+          <div class="group">
+            <div
+              class="shadow-[0px_10px_30px_rgba(11,61,46,0.05)] relative mb-6 aspect-[4/5] w-full overflow-hidden rounded-lg"
+            >
+              <img
+                alt="Portrait of Priya Nair"
+                class="h-full w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
+                src="/images/about/team-priya.jpg"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="font-headline-sm text-headline-sm text-primary mb-1">Priya Nair</h3>
+            <p class="font-label-md text-label-md text-secondary">Director of Guest Experience</p>
+          </div>
+          <div class="group">
+            <div
+              class="shadow-[0px_10px_30px_rgba(11,61,46,0.05)] relative mb-6 aspect-[4/5] w-full overflow-hidden rounded-lg"
+            >
+              <img
+                alt="Portrait of Thomas Kurian"
+                class="h-full w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
+                src="/images/about/team-thomas.jpg"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="font-headline-sm text-headline-sm text-primary mb-1">Thomas Kurian</h3>
+            <p class="font-label-md text-label-md text-secondary">Head of Fleet Operations</p>
+          </div>
+          <div class="group">
+            <div
+              class="shadow-[0px_10px_30px_rgba(11,61,46,0.05)] relative mb-6 aspect-[4/5] w-full overflow-hidden rounded-lg"
+            >
+              <img
+                alt="Portrait of Anjali Varma"
+                class="h-full w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
+                src="/images/about/team-anjali.jpg"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="font-headline-sm text-headline-sm text-primary mb-1">Anjali Varma</h3>
+            <p class="font-label-md text-label-md text-secondary">Aesthetic Itinerary Designer</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

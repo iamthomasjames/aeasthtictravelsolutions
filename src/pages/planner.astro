@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import InquiryForm from '../components/InquiryForm.astro';
+import { site } from '../site.config';
+
+const success = Astro.url.searchParams.get('success') === '1';
+---
+
+<BaseLayout
+  title={`Design Your Journey · ${site.name}`}
+  description="Share your vision and our travel designers will craft a personalized Kerala itinerary tailored to your tastes."
+  ogImage="/images/planner/aside.png"
+>
+  <main>
+    <section class="relative mx-auto max-w-container-max px-margin-mobile pt-section-padding pb-20 md:px-margin-desktop">
+      <div class="grid grid-cols-1 items-center gap-gutter md:grid-cols-12">
+        <div class="text-center md:col-span-8 md:col-start-3">
+          <h1 class="font-display-lg text-display-lg text-primary mb-6 text-balance">
+            Design Your Journey
+          </h1>
+          <p class="font-body-lg text-body-lg text-on-surface-variant mx-auto max-w-2xl">
+            Allow us to craft a personalized itinerary that aligns with your discerning tastes. Share
+            your vision, and our experts will curate an unforgettable Kerala experience tailored
+            exclusively for you.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-container-max px-margin-mobile py-20 md:px-margin-desktop">
+      {success && (
+        <div
+          class="border-outline-variant bg-primary-fixed/30 mb-10 rounded-xl border px-6 py-4 text-center font-body-md text-body-md text-on-background"
+          role="status"
+        >
+          Thank you — your inquiry was sent. Our travel designers will reach out shortly.
+        </div>
+      )}
+      <div class="grid grid-cols-1 gap-gutter md:grid-cols-12">
+        <div class="hidden md:col-span-5 md:block">
+          <div class="shadow-[0px_10px_30px_rgba(11,61,46,0.05)] relative h-full min-h-[520px] w-full overflow-hidden rounded-xl">
+            <img
+              alt="Serene Kerala Backwaters"
+              class="absolute inset-0 h-full w-full object-cover"
+              src="/images/planner/aside.png"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <div class="md:col-span-7">
+          <div class="shadow-[0px_10px_30px_rgba(11,61,46,0.05)] bg-surface-container-lowest rounded-xl p-8 md:p-12">
+            <InquiryForm />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
